@@ -20,6 +20,7 @@ const Header = () => {
       <div className="container mx-auto px-4 flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-3">
           <img src={logo} alt="AJ Interiors" className="h-10 md:h-14 rounded" />
+          <span className="font-display text-lg md:text-xl text-gradient-gold font-semibold tracking-wide">AJ Interiors</span>
         </Link>
 
         {/* Desktop nav */}

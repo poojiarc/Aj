@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram, Home, Info, Image, Wrench, BedDouble, Sofa, DoorOpen, Lamp, Briefcase, ChefHat } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 
 const Footer = () => {
   return (
@@ -8,7 +9,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="font-display text-2xl text-gradient-gold mb-4">AJ Interiors</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img src={logo} alt="AJ Interiors" className="h-12 rounded" />
+              <h3 className="font-display text-2xl text-gradient-gold">AJ Interiors</h3>
+            </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Design Your Dream. Premium interiors crafted with care, quality, and honest pricing.
             </p>
@@ -37,16 +41,17 @@ const Footer = () => {
             <h4 className="font-display text-lg text-foreground mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               {[
-                { to: "/", label: "Home" },
-                { to: "/about", label: "About Us" },
-                { to: "/portfolio", label: "Portfolio" },
-                { to: "/contact", label: "Contact" },
+                { to: "/", label: "Home", icon: Home },
+                { to: "/about", label: "About Us", icon: Info },
+                { to: "/portfolio", label: "Portfolio", icon: Image },
+                { to: "/contact", label: "Contact", icon: Phone },
               ].map((link) => (
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
                   >
+                    <link.icon className="w-3.5 h-3.5 text-primary/70" />
                     {link.label}
                   </Link>
                 </li>
@@ -58,13 +63,21 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-lg text-foreground mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
-              {["Modular Kitchens", "Bedroom Interiors", "Living Room", "Wardrobes", "Pooja Rooms", "Home Office"].map((s) => (
-                <li key={s}>
+              {[
+                { label: "Modular Kitchens", icon: ChefHat },
+                { label: "Bedroom Interiors", icon: BedDouble },
+                { label: "Living Room", icon: Sofa },
+                { label: "Wardrobes", icon: DoorOpen },
+                { label: "Pooja Rooms", icon: Lamp },
+                { label: "Home Office", icon: Briefcase },
+              ].map((s) => (
+                <li key={s.label}>
                   <Link
                     to="/services"
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
                   >
-                    {s}
+                    <s.icon className="w-3.5 h-3.5 text-primary/70" />
+                    {s.label}
                   </Link>
                 </li>
               ))}
@@ -77,7 +90,7 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2 text-muted-foreground">
                 <Phone className="w-4 h-4 mt-0.5 text-primary flex-shrink-0" />
-                <span>79892 59900 | 91820 43953</span>
+                <span>+91 79892 59900 | +91 91820 43953</span>
               </li>
               <li className="flex items-start gap-2 text-muted-foreground">
                 <Mail className="w-4 h-4 mt-0.5 text-primary flex-shrink-0" />
