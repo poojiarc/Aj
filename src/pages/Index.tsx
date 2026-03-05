@@ -7,7 +7,7 @@ import ServiceCard from "@/components/ServiceCard";
 import { services } from "@/data/services";
 import { motion, AnimatePresence } from "framer-motion";
 
-import hero1 from "@/assets/hero-1.jpg";
+import hero1 from "@/assets/logo.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
 
@@ -54,18 +54,23 @@ const Index = () => {
           >
             <h1 className="font-display text-4xl md:text-6xl lg:text-7xl leading-tight mb-6">
   <span className="text-gradient-gold animate-glow-pulse">
-    We Eliminate
+    From Empty Flat
   </span>{" "}
   <span className="text-foreground">
-    Storage Problems, Layout Mistakes,
+    to Fully Designed Home
   </span>{" "}
   <span className="text-gradient-gold">
-    Delays & Hidden Costs
+    in 60 Days
+  </span>
+  <br />
+  <span className="text-foreground text-2xl md:text-3xl lg:text-4xl">
+    — Without You Managing Contractors
   </span>
 </h1>
 
 <p className="text-muted-foreground text-lg md:text-xl mb-6 max-w-xl">
-  So you can move into a complete, functional, premium home — delivered on time and built to last.
+  We eliminate storage problems, layout mistakes, delays, and hidden costs —
+  so you can move into a complete, functional, premium home on time.
 </p>
 
 <div className="grid grid-cols-2 gap-3 text-sm text-muted-foreground mb-8 max-w-md">
@@ -74,7 +79,7 @@ const Index = () => {
   <span>✔ Dedicated Project Manager</span>
   <span>✔ 300+ Homes Delivered</span>
 </div>
-           
+   
               <div className="flex flex-wrap gap-4">
   <Button variant="hero" size="lg" asChild>
     <Link to="/contact">
