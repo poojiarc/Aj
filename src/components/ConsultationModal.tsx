@@ -176,7 +176,7 @@ const ConsultationModal = ({ open, onClose }: ConsultationModalProps) => {
                 </div>
                 <div className="w-full rounded-lg overflow-hidden" style={{ minHeight: 400 }}>
                   <iframe
-                    src="https://calendly.com/poojimedabayina/30min"
+                    src="https://calendly.com/anjiinterior/30min"
                     width="100%"
                     height="500"
                     frameBorder="0"
