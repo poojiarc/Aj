@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Star, ChevronDown, Phone, MessageCircle } from "lucide-react";
+import { ArrowRight, Star, ChevronDown, Phone, MessageCircle,  CalendarCheck} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
 import ServiceCard from "@/components/ServiceCard";
@@ -10,11 +10,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import hero1 from "@/assets/logo.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
+import ConsultationModal from "@/components/ConsultationModal";
 
 const heroImages = [hero1, hero2, hero3];
 
 const Index = () => {
   const [currentHero, setCurrentHero] = useState(0);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -81,17 +83,23 @@ const Index = () => {
 </div>
    
               <div className="flex flex-wrap gap-4">
-  <Button variant="hero" size="lg" asChild>
-    <Link to="/contact">
-      Book Free Site Visit <ArrowRight className="w-5 h-5" />
-    </Link>
-  </Button>
+  <button
+  onClick={() => setShowModal(true)}
+  className="flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-gold-dark via-gold to-gold-light text-primary-foreground font-semibold text-sm shadow-lg hover:scale-105 transition-all duration-300 hover:shadow-[0_0_25px_hsl(38_55%_65%/0.4)] shimmer"
+>
+  <CalendarCheck className="w-4 h-4" />
+  Book Free Site Visit
+</button>
 
   <Button variant="gold-outline" size="lg" asChild>
     <Link to="/portfolio">
       Explore Our Work
     </Link>
   </Button>
+ <ConsultationModal 
+  open={showModal} 
+  onClose={() => setShowModal(false)} 
+/>
 </div>
             
 
