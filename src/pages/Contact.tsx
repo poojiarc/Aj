@@ -39,8 +39,8 @@ const Contact = () => {
               {
                 icon: Mail,
                 title: "Email Us",
-                lines: ["poojimedabayina@gmail.com"],
-                href: "mailto:poojimedabayina@gmail.com",
+                lines: ["anjiinterior@gmail.com"],
+                href: "mailto:anjiinterior@gmail.com",
               },
               {
                 icon: MapPin,

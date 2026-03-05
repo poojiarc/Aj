@@ -26,7 +26,7 @@ const Index = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="relative h-screen flex items-center overflow-hidden">
+      <section className="relative h-screen flex items-center overflow-hidden pt-24 md:pt-28">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentHero}
@@ -45,7 +45,7 @@ const Index = () => {
           </motion.div>
         </AnimatePresence>
 
-        <div className="relative container mx-auto px-4 z-10">
+        <div className="relative container mx-auto px-4 z-10 pt-16 md:pt-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -53,23 +53,42 @@ const Index = () => {
             className="max-w-2xl"
           >
             <h1 className="font-display text-4xl md:text-6xl lg:text-7xl leading-tight mb-6">
-              <span className="text-gradient-gold animate-glow-pulse">Transform</span>{" "}
-              <span className="text-foreground">Your Space Into a</span>{" "}
-              <span className="text-gradient-gold">Dream Home</span>
-            </h1>
-            <p className="text-muted-foreground text-lg md:text-xl mb-8 max-w-lg">
-              We create stunning interiors that reflect your personality and elevate your lifestyle with timeless elegance.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button variant="hero" asChild>
-                <Link to="/portfolio">
-                  Explore Our Work <ArrowRight className="w-5 h-5" />
-                </Link>
-              </Button>
-              <Button variant="gold-outline" size="lg" asChild>
-                <Link to="/contact">Contact Us</Link>
-              </Button>
-            </div>
+  <span className="text-gradient-gold animate-glow-pulse">
+    We Eliminate
+  </span>{" "}
+  <span className="text-foreground">
+    Storage Problems, Layout Mistakes,
+  </span>{" "}
+  <span className="text-gradient-gold">
+    Delays & Hidden Costs
+  </span>
+</h1>
+
+<p className="text-muted-foreground text-lg md:text-xl mb-6 max-w-xl">
+  So you can move into a complete, functional, premium home — delivered on time and built to last.
+</p>
+
+<div className="grid grid-cols-2 gap-3 text-sm text-muted-foreground mb-8 max-w-md">
+  <span>✔ Fixed Timelines</span>
+  <span>✔ Transparent Pricing</span>
+  <span>✔ Dedicated Project Manager</span>
+  <span>✔ 300+ Homes Delivered</span>
+</div>
+           
+              <div className="flex flex-wrap gap-4">
+  <Button variant="hero" size="lg" asChild>
+    <Link to="/contact">
+      Book Free Site Visit <ArrowRight className="w-5 h-5" />
+    </Link>
+  </Button>
+
+  <Button variant="gold-outline" size="lg" asChild>
+    <Link to="/portfolio">
+      Explore Our Work
+    </Link>
+  </Button>
+</div>
+            
 
             {/* Stats */}
             <div className="flex items-center gap-6 mt-10">

@@ -32,7 +32,7 @@ const ConsultationModal = ({ open, onClose }: ConsultationModalProps) => {
     setSending(true);
     // Send data via mailto
     const body = `Name: ${name}\nMobile: ${mobile}\n\n${questions.map((q, i) => `Q: ${q}\nA: ${answers[i]}`).join("\n\n")}`;
-    const mailtoLink = `mailto:poojimedabayina@gmail.com?subject=Free Consultation Request - ${name}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:anjiinterior@gmail.com?subject=Free Consultation Request - ${name}&body=${encodeURIComponent(body)}`;
     window.open(mailtoLink, "_blank");
     setSending(false);
     setStep(3);
