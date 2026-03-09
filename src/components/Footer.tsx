@@ -110,7 +110,7 @@ const Footer = () => {
           <p className="text-sm text-muted-foreground">
             Made with <span className="text-destructive">❤</span> by{" "}
             <a
-              href="https://staffarc.com"
+              href="https://staffarc.in"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary hover:underline font-semibold"

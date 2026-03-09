@@ -212,13 +212,17 @@ const questions = [
   "When guests enter your home, what do you want them to feel?",
   "Who is the final decision maker for this project?",
   "What budget range are you comfortable investing if the design is exactly what you want?",
+  "What is the biggest frustration you currently have with your home?",
+  "Have you worked with an interior designer before?",
+  "What made you decide to look for an interior designer now?",
+  "We reserve consultation slots exclusively for homeowners planning their interior project. If you book a slot, can you commit to attending the meeting on time?"
 ];
 
 const ConsultationModal = ({ open, onClose }: ConsultationModalProps) => {
   const [step, setStep] = useState(1);
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
-  const [answers, setAnswers] = useState<string[]>(Array(5).fill(""));
+  const [answers, setAnswers] = useState<string[]>(Array(9).fill(""));
 
   const handleNext1 = () => {
     if (!name.trim() || !mobile.trim()) {
@@ -415,15 +419,13 @@ const ConsultationModal = ({ open, onClose }: ConsultationModalProps) => {
                   style={{ minHeight: 400 }}
                 >
                   <iframe
-                    src={`https://calendly.com/anjiinterior/30min?name=${encodeURIComponent(
-                      name
-                    )}`}
-                    width="100%"
-                    height="500"
-                    frameBorder="0"
-                    title="Book Appointment"
-                    className="rounded-lg"
-                  />
+  src={`https://calendly.com/anjiinterior/30min?name=${encodeURIComponent(name)}&a1=${encodeURIComponent(mobile)}&a2=${encodeURIComponent(answers[0])}&a3=${encodeURIComponent(answers[1])}&a4=${encodeURIComponent(answers[2])}&a5=${encodeURIComponent(answers[3])}&a6=${encodeURIComponent(answers[4])}&a7=${encodeURIComponent(answers[5])}&a8=${encodeURIComponent(answers[6])}&a9=${encodeURIComponent(answers[7])}`}
+  width="100%"
+  height="500"
+  frameBorder="0"
+  title="Book Appointment"
+  className="rounded-lg"
+/>
                 </div>
               </motion.div>
             )}
